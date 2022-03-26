@@ -44,26 +44,23 @@ void start(){
     printf("----------------------------------------------------------------------------------------------------------------------------------------------------------\n");
 
 
-    bool UserNameValid = Valid();
+   bool UserNameValid = Valid();
     if(UserNameValid==true){
         printf("\n");
 
-
+    printf("LOADING");
+        Sleep(500);
+        printf(".");
+        Sleep(500);
+        printf(".");
+        Sleep(500);
+        printf(".");
+        Sleep(500);
         printf("----------------------------------------LOGIN IS SUCCESSFUL-------------------------------------------------\n");
         //printf("==============================WELCOME TO SHS BUS RESERVATION SYSTEM!!!======================================\n");
         //printf("------------------------------------------------------------------------------------------------------------\n");
-        printf("Press any key to continue...\n");
+        printf("----------------Press any key to go to main menu...--------------\n");
         getch();
-
-        printf("LOADING");
-        Sleep(500);
-        printf(".");
-        Sleep(500);
-        printf(".");
-        Sleep(500);
-        printf(".");
-        Sleep(500);
-
 
         showMenu();
 
@@ -73,6 +70,7 @@ void start(){
     }
 
 }
+
 
 
 //takes user input of user-name and password and checks if it's matching or not
@@ -174,41 +172,75 @@ void view_Tickets(int Bus_Num, int seat_Num, char Pass_Nam[]){
      FILE *vbt;
        vbt = fopen("ViewTickets.txt","r");
         fscanf(vbt,"%d %d %s ",&Bus_Num, &seat_Num,Pass_Nam);
- printf("Bus Number     : %d\nSeat Number    : %d\nPassenger Name : %s\nDestination    : Bhubaneshwar to Puri\nTime           : 05:00\nFare           : 100\n\n",Bus_Num,seat_Num,Pass_Nam);
+        if(Bus_Num==606910){
+ printf("Bus Number     : %d\nSeat Number    : %d\nPassenger Name : %s\nDestination    : Bhubaneshwar to Puri\nTime           : 08:00 to 10:00 (58 km)\nFare           : 50\n\n",Bus_Num,seat_Num,Pass_Nam);
+        }
+        if(Bus_Num==606911){
+ printf("Bus Number     : %d\nSeat Number    : %d\nPassenger Name : %s\nDestination    : Bhubaneshwar to Brahmapur\nTime           : 09:00 to 00:30 (164 km)\nFare           : 150\n\n",Bus_Num,seat_Num,Pass_Nam);
+        }
+        if(Bus_Num==606912){
+ printf("Bus Number     : %d\nSeat Number    : %d\nPassenger Name : %s\nDestination    : Bhubaneshwar to  Cuttack\nTime           : 13:00 to 13:50 (34 km)\nFare           : 30\n\n",Bus_Num,seat_Num,Pass_Nam);
+        }
+        if(Bus_Num==606913){
+ printf("Bus Number     : %d\nSeat Number    : %d\nPassenger Name : %s\nDestination    : Bhubaneshwar to Balasore\nTime           : 06:00 to 10:50 (207 km)\nFare           : 200\n\n",Bus_Num,seat_Num,Pass_Nam);
+        }
+        if(Bus_Num==606914){
+ printf("Bus Number     : %d\nSeat Number    : %d\nPassenger Name : %s\nDestination    : Bhubaneshwar to Rourkela\nTime           : 22:00 to 06:00 (327 km)\nFare           : 500\n\n",Bus_Num,seat_Num,Pass_Nam);
+        }
+        if(Bus_Num==606915){
+ printf("Bus Number     : %d\nSeat Number    : %d\nPassenger Name : %s\nDestination    : Bhubaneshwar to Sambalpur\nTime           : 21:00 to 04:30 (319 km)\nFare           : 450\n\n",Bus_Num,seat_Num,Pass_Nam);
+        }
+        if(Bus_Num==605822){
+ printf("Bus Number     : %d\nSeat Number    : %d\nPassenger Name : %s\nDestination    : Bhubaneshwar to Kolkata\nTime           : 06:00 to 16:00 (450 km)\nFare           : 600\n\n",Bus_Num,seat_Num,Pass_Nam);
+        }
+        if(Bus_Num==604049){
+ printf("Bus Number     : %d\nSeat Number    : %d\nPassenger Name : %s\nDestination    : Bhubaneshwar to Hyderabad\nTime           : 16:00 to 12:00 (1024 km)\nFare           : 1200\n\n",Bus_Num,seat_Num,Pass_Nam);
+        }
+        if(Bus_Num==605157){
+ printf("Bus Number     : %d\nSeat Number    : %d\nPassenger Name : %s\nDestination    : Bhubaneshwar to Ranchi\nTime           : 19:00 to 06:00 (506 km)\nFare           : 600\n\n",Bus_Num,seat_Num,Pass_Nam);
+        }
+        if(Bus_Num==607388){
+ printf("Bus Number     : %d\nSeat Number    : %d\nPassenger Name : %s\nDestination    : Bhubaneshwar to Nagpur\nTime           : 05:00 to 22:30 (840 km)\nFare           : 1000\n\n",Bus_Num,seat_Num,Pass_Nam);
+        }
 }
+
 void bookTickets(){
-    int num,i,j;
+    int Bus_Num,i,j;
     char em[20] = {"Empty"};
     printf("========BUS RESERVATION SYSTEM==========\n");
     printf("Enter Bus no. :- ");
-    scanf("%d",&num);
+    scanf("%d",&Bus_Num);
     printf("\n");
 
 
 
 
-    char filename[FILENAME_SIZE];
-    if (num==606910)
+   char filename[FILENAME_SIZE];
+    if (Bus_Num==606910)
     strcpy(filename,"1.txt");
-    else if (num==606911)
+    else if (Bus_Num==606911)
         strcpy(filename,"2.txt");
 
-    else if (num==606912)
+    else if (Bus_Num==606912)
         strcpy(filename,"3.txt");
-    else if (num==606913)
+    else if (Bus_Num==606913)
         strcpy(filename,"4.txt");
-    else if (num==606914)
+    else if (Bus_Num==606914)
         strcpy(filename,"5.txt");
-    else if (num==606915)
+    else if (Bus_Num==606915)
         strcpy(filename,"6.txt");
-    else if (num==606916)
+    else if (Bus_Num==605822)
         strcpy(filename,"7.txt");
-    else if (num==606917)
+    else if (Bus_Num==604049)
         strcpy(filename,"8.txt");
-    else if (num==606918)
+    else if (Bus_Num==605157)
         strcpy(filename,"9.txt");
-    else if (num==606919)
+    else if (Bus_Num==607388)
         strcpy(filename,"10.txt");
+    else{
+        printf("No bus found\n");
+        
+    }
 
     FILE *fptr = fopen(filename,"r");
 
@@ -243,32 +275,62 @@ void bookTickets(){
 
     int AvTic = 20;
     printf("Available Tickets:--------> %d\n\n",AvTic);
-    int num_Tic, seat_num, p_Mob_No, P_Trav_Date;
-    char p_name[MAX_LINE];
+    int num_Tic, Bus_Num;
+    char Pass_Nam[MAX_LINE];
     printf("Numbers Of Tickets you want to Book:--->");
     scanf("%d",&num_Tic);
     printf("\n");
     for(int m=1; m<=num_Tic; m++){
         printf("============Enter your details for Ticket no %d= \n",m);
         printf("Seat number:-------->");
-        scanf("%d",&seat_num);
+        scanf("%d",&Bus_Num);
         printf("Passenger name:-------->");
         getchar();
-        gets(p_name)
-        printf("Passenger Mobile number:-------->");
-        scanf("%d",&p_Mob_No);
+        gets(Pass_Nam)
 
         Sleep(300);
     }
+    if (Bus_Num==606910)
+    printf("Total fare is 50\n");
+    else if (Bus_Num==606911)
+        printf("Total fare is 150\n");
+
+    else if (Bus_Num==606912)
+        printf("Total fare is 30\n");
+    else if (Bus_Num==606913)
+        printf("Total fare is 200\n");
+    else if (Bus_Num==606914)
+       printf("Total fare is 500\n");
+    else if (Bus_Num==606915)
+        printf("Total fare is 400\n");
+    else if (Bus_Num==605822)
+        printf("Total fare is 600\n");
+    else if (Bus_Num==604049)
+        printf("Total fare is 1200\n");
+    else if (Bus_Num==605157)
+        printf("Total fare is 600\n");
+    else if (Bus_Num==607388)
+        printf("Total fare is 1000\n");
+    char yes,ch = 'y';
+    printf("Confirm(y/n) : ");
+    scanf("%c",&yes);
+    if(ch==yes){
+        printf("ticket booked\n");
+         FILE *vbt = fopen("ViewTickets.txt","w");
+     fprintf(vbt, "%d %d %s ",Bus_Num, seat_Num, Pass_Nam);
+     fclose(vbt);
+    }else{
+        printf("Your tickets has not been booked\n");
+    }
+    printf("----------------------press any key to go back to main menu-----------------------------");
+   
 
     fclose(fptr);
-    updateBus(p_name, seat_num,filename);
+    updateBus(Pass_Nam, Bus_Num,filename);
 
 
     Sleep(500);
-    printf("ticket booked\n");
 
-    printf("press any key to continue");
     getch();
     showMenu();
 }
