@@ -390,5 +390,5 @@ void updateBus(char name[], int seatNumber, char filename[]){
 
     remove(filename);
     rename(temp_filename,filename);
- 
+  
 }
